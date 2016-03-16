@@ -1,3 +1,4 @@
+var TheMeaningOfLife = '42';
 var app = angular.module('phobiaApp', []);
 app.controller('phobiaCtrl',function($scope){
     $scope.edit_on = true;
