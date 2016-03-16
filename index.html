@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Fear todo list</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+        <script src="js/script.js"></script>
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+    </head>
+    <body>
+        <div ng-app="phobiaApp">
+            <div ng-controller="phobiaCtrl">
+                <div>{{phobias}}</div>
+                <div ng-repeat="phobia in phobias">
+                    <h1>{{phobia.name}}</h1>
+                    <h3>{{phobia.desc}}</h3>
+                    <button ng-click="edit()">Edit</button>
+                    <div ng-show="edit_mode()">
+                        <input type="text" ng-model="phobia.name">
+                        <input type="text" ng-model="phobia.desc">
+                    </div>
+                </div>
+                <div>
+                   <input type="text" placeholder="name" ng-model="temp_name"/>
+                   <input type="text" placeholder="description" ng-model="temp_desc"/>
+                   <button ng-click="add_phobia(temp_name,temp_desc)">Submit</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
